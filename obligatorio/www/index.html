@@ -16,6 +16,8 @@
         <ion-route url="/" component="page-home"></ion-route>
         <ion-route url="/login" component="page-login"></ion-route>
         <ion-route url="/registro" component="page-registro"></ion-route>
+        <ion-route url="/logout" component="page-logout"></ion-route>
+        <ion-route url="/gasto" component="page-gasto"></ion-route>
     </ion-router>
     <ion-nav></ion-nav>
     
@@ -50,7 +52,52 @@
         <ion-content>Pantalla de home...</ion-content>
     </page-home>
 
+    <page-gasto class="ion-page" id="pantalla-gasto">
 
+        <ion-header>
+            <ion-toolbar>
+                <ion-buttons slot="start">
+                    <ion-menu-button></ion-menu-button>
+                </ion-buttons>
+                <ion-title>Agregar un gasto</ion-title>
+            </ion-toolbar>
+        </ion-header>
+        <ion-content>
+            
+            <ion-list>
+                <ion-item>
+                  <ion-label>Concepto de gasto</ion-label>
+                  <ion-input  id="txtConceptoGasto"></ion-input>
+                </ion-item>
+
+                  <ion-item>
+                    <ion-select id="slcRubrosGasto"  placeholder="Seleccione rubro">
+                    </ion-select>
+                  </ion-item>
+
+                  <ion-item>
+                    <ion-select id="slcMedioPagoGasto" placeholder="Seleccione medio de pago">
+                        <ion-select-option value="efectivo">Efectivo</ion-select-option>
+                        <ion-select-option value="debito">Tarjeta de débito</ion-select-option>
+                        <ion-select-option value="credito">Tarjeta de crédito</ion-select-option>
+                    </ion-select>
+                  </ion-item>
+
+                  <ion-item>
+                    <ion-label>Importe total $</ion-label>
+                    <ion-input  id="txtImporteGasto"></ion-input>
+                  </ion-item>
+
+                  <ion-item>
+                    <ion-datetime id="fechaGasto"></ion-datetime>
+                  <ion-item/>
+                            
+                <ion-button expand="full" id="btnAgregarGasto">Agregar gasto</ion-button>
+              </ion-list>
+              <p id="pGasto"></p>
+
+        </ion-content>
+    </page-gasto>
 
     <page-login class="ion-page" id="pantalla-login">
 
@@ -62,8 +109,26 @@
                 <ion-title>Login</ion-title>
             </ion-toolbar>
         </ion-header>
-        <ion-content>Pantalla de Login...</ion-content>
+        <ion-content>        
+            <ion-list>
+                <ion-item>
+                  <ion-label>Usuario</ion-label>
+                  <ion-input  id="txtLoginUsuario"></ion-input>
+                </ion-item>
+
+                <ion-item>
+                    <ion-label>Password</ion-label>
+                    <ion-input  type="password" id="txtLoginPass"></ion-input>
+                  </ion-item>
+                            
+                <ion-button expand="full" id="btnLogin">Login</ion-button>
+              </ion-list>
+              <p id="pLogin"></p>
+
+        </ion-content>
+
     </page-login>
+
 
     <page-registro class="ion-page" id="pantalla-registro">
 
@@ -97,16 +162,6 @@
                     <ion-select id="slcCiudades" placeholder="Seleccione ciudad">
                     </ion-select>
                   </ion-item>
-
-                <!-- <ion-item>
-                  <ion-label>Departamento</ion-label>
-                  <ion-input   id="txtRegistroDepto"></ion-input>
-                </ion-item>
-              
-                <ion-item>
-                  <ion-label>Ciudad</ion-label>
-                  <ion-input   id="txtRegistroCiudad"> </ion-input>
-                </ion-item> -->
                             
                 <ion-button expand="full" id="btnRegistrar">Registrar</ion-button>
               </ion-list>
